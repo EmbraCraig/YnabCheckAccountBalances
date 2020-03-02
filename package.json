@@ -1,0 +1,30 @@
+{
+  "name": "ynabcheckaccountbalances",
+  "version": "1.0.0",
+  "description": "Check your account balances against the expected values, according to your YNAB Categories",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmbraCraig/YnabCheckAccountBalances.git"
+  },
+  "author": "Craig McCallum",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EmbraCraig/YnabCheckAccountBalances/issues"
+  },
+  "homepage": "https://github.com/EmbraCraig/YnabCheckAccountBalances#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pug": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "tape": "^4.13.0"
+  }
+}
