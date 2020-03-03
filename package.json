@@ -1,5 +1,5 @@
 {
-  "name": "ynabcheckaccountbalances",
+  "name": "checkaccountbalancesforynab",
   "version": "1.0.0",
   "description": "Check your account balances against the expected values, according to your YNAB Categories",
   "main": "app.js",
