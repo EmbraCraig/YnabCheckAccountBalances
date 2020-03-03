@@ -10,13 +10,15 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       li.nav-item
         a.nav-link(href='/anAddress') NavBar Button
     ul.navbar-nav.float-right
-      li.nav-item
-        a.nav-link(href='/login') Login
-      li.nav-item
-        a.nav-link(href='/user/new') Register
-      li.nav-item.dropdown
-        a.nav-link.dropdown-toggle(id='navbarDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Accounts
-        .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
-          a.dropdown-item(href='#') Settings
-          a.dropdown-item(href='/logout') Logout
+      if (!user)
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/user/new') Register
+      if (user)
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(id='navbarDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') #{user.username}
+          .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+            a.dropdown-item(href='#') Settings
+            a.dropdown-item(href='/logout') Logout
           

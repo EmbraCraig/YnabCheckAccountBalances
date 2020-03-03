@@ -17,8 +17,6 @@ userController.register = function(req, res) {
 userController.doRegister = function(req, res) {
     User.register(new User({ username : req.body.username, name: req.body.name }), req.body.password, function(err, user) {
         if (err) {
-            console.log(req.body);
-            console.log(err);
             return res.render('../views/user/new', { user : user });
         }
   

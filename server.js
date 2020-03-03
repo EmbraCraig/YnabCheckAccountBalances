@@ -4,10 +4,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const config = require('./config/config');
+const session = require('express-session');
 
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var cookieParser = require('cookie-parser');
 
 // db stuff
 var mongoose = require('mongoose');
@@ -29,16 +29,19 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
-app.use(cookieParser(config.cookieSecret));
 
-//auth middlewares
-app.use(require('express-session')({
+//auth middlewares  
+app.use(session({
     secret: config.AUTHSECRET,
     resave: false,
     saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function(req,res,next){
+    res.locals.user = req.user;
+    next();
+});
 
 // auth setup
 var User = require('./models/user');
