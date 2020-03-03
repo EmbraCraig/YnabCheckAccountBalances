@@ -13,3 +13,13 @@ test('index route', function(t) {
             t.end();
         });
 });
+
+test('privacy policy route', function(t) {
+    request(app)
+        .get('/privacy')
+        .expect(200)
+        .end(function(err) {
+            t.error(err, 'No error');
+            t.end();
+        });
+});
